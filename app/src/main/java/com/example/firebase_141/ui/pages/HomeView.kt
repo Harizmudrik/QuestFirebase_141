@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.AccountBox
 import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Delete
@@ -42,6 +43,7 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -50,6 +52,7 @@ import com.example.firebase_141.model.Mahasiswa
 import com.example.firebase_141.ui.viewmodel.HomeUiState
 import com.example.firebase_141.ui.viewmodel.HomeViewModel
 import com.example.firebase_141.ui.viewmodel.PenyediaViewModel
+
 
 @Composable
 private fun DeleteConfirmationDialog(
@@ -74,6 +77,7 @@ private fun DeleteConfirmationDialog(
         }
     )
 }
+
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -132,6 +136,18 @@ fun CardMhs(
                 Spacer(modifier = Modifier.padding(4.dp))
                 Text(
                     text = mhs.kelas,
+                    fontWeight = FontWeight.Bold,
+                )
+
+            }
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Icon(imageVector = Icons.Filled.AccountBox, contentDescription = "")
+                Spacer(modifier = Modifier.padding(4.dp))
+                Text(
+                    text = mhs.judulskripsi,
                     fontWeight = FontWeight.Bold,
                 )
             }

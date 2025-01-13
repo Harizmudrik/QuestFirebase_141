@@ -17,4 +17,5 @@ interface RepositoryMhs {
 
     //updateMhs
     suspend fun updateMhs(mahasiswa: Mahasiswa) // Memperbarui data mahasisiswa
+
 }

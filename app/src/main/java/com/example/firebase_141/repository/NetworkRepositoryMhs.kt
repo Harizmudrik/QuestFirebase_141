@@ -1,7 +1,6 @@
 package com.example.firebase_141.repository
 
-import android.content.ContentValues.TAG
-import android.util.Log
+
 import com.example.firebase_141.model.Mahasiswa
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
@@ -64,8 +63,15 @@ class NetworkRepositoryMhs (
                 .whereEqualTo("nim", mahasiswa.nim)
                 .get()
                 .await()
-        } catch (e: Exception){
-            throw Exception("Gagal menghpus data mahasiswa : ${e.message}")
+
+            for (document in querySnapshot.documents) {
+                firestore.collection("Mahasiswa")
+                    .document(document.id)
+                    .delete()
+                    .await()
+            }
+        } catch (e: Exception) {
+            throw Exception("Gagal menghapus data mahasiswa: ${e.message}")
         }
     }
 
