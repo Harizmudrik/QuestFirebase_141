@@ -93,5 +93,6 @@ fun FormMahasiswa (
             text = errorState.alamat ?: "",
             color = Color.Red
         )
+        Spacer(modifier = Modifier.height(16.dp))
     }
 }
