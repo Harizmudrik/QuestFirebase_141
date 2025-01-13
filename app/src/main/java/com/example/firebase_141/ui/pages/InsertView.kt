@@ -94,5 +94,25 @@ fun FormMahasiswa (
             color = Color.Red
         )
         Spacer(modifier = Modifier.height(16.dp))
+        Row (
+            modifier = Modifier.fillMaxWidth()
+        ){
+            kelas.forEach{ item ->
+                Row (
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.Start
+                ){
+                    RadioButton(
+                        selected = mahasiswaEvent.kelas == item,
+                        onClick = { onValueChange(mahasiswaEvent.copy(kelas = item)) }
+                    )
+                    Text(text = item)
+                }
+            }
+        }
+        Text (
+            text = errorState.kelas ?: "",
+            color = Color.Red
+        )
     }
 }
