@@ -1,7 +1,12 @@
 package com.example.firebase_141.ui.pages
 
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import com.example.firebase_141.ui.viewmodel.FormErrorState
 import com.example.firebase_141.ui.viewmodel.MahasiswaEvent
 
@@ -12,7 +17,24 @@ fun FormMahasiswa (
     onValueChange: (MahasiswaEvent) -> Unit,
     errorState: FormErrorState = FormErrorState(),
     modifier: Modifier = Modifier
-){
+) {
     val gender = listOf("Laki-laki", "Perempuan")
     val kelas = listOf("A", "B", "C", "D", "E")
+
+    Column(
+        modifier = modifier.fillMaxWidth()
+    ) {
+        OutlinedTextField(
+            modifier = Modifier.fillMaxWidth(),
+            value = mahasiswaEvent.nama,
+            onValueChange = { onValueChange(mahasiswaEvent.copy(nama = it)) },
+            label = { Text("Nama") },
+            isError = errorState.nama != null,
+            placeholder = { Text("Masukkan Nama") }
+        )
+        Text(
+            text = errorState.nama ?: "",
+            color = Color.Red
+        )
+    }
 }
