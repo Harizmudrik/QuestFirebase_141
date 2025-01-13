@@ -1,8 +1,14 @@
 package com.example.firebase_141.ui.viewmodel
 
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import com.example.firebase_141.repository.RepositoryMhs
 
 class InsertViewModel (
     private val mhs: RepositoryMhs
-): ViewModel()
+): ViewModel() {
+    var uiEvent: InsertUiState by mutableStateOf(InsertUiState())
+        private set
+}
