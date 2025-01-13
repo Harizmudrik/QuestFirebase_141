@@ -12,3 +12,7 @@ hasil dari running code :
 <h2>Tampilan saat ingin di hapus: </h2>
 
  ![4 (allert)](https://github.com/user-attachments/assets/d87c6174-dada-4a5f-b1f6-59371279b951)
+
+<h2>Hasil FireBase</h2>
+
+![image](https://github.com/user-attachments/assets/26ad50b3-e442-4009-ba0a-81b2b27f3d35)
