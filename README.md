@@ -16,3 +16,7 @@ hasil dari running code :
 <h2>Hasil FireBase</h2>
 
 ![image](https://github.com/user-attachments/assets/26ad50b3-e442-4009-ba0a-81b2b27f3d35)
+
+
+![insert](https://github.com/user-attachments/assets/c74a85f8-b98d-453f-890b-00da4ffcbca7)
+![homesaya](https://github.com/user-attachments/assets/b4d2d7ad-3de2-46e6-9c71-1c805ca89b39)
