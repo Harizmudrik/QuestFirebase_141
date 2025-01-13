@@ -17,6 +17,7 @@ import androidx.compose.material3.RadioButton
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
@@ -31,6 +32,8 @@ import com.example.firebase_141.ui.viewmodel.InsertUiState
 import com.example.firebase_141.ui.viewmodel.InsertViewModel
 import com.example.firebase_141.ui.viewmodel.MahasiswaEvent
 import com.example.firebase_141.ui.viewmodel.PenyediaViewModel
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 
 @Composable
@@ -196,4 +199,29 @@ fun InsertMhsView(
     val uiEvent = viewModel.uiEvent
     val snackbarHostState = remember { SnackbarHostState() }
     val coroutineScope =  rememberCoroutineScope()
+
+    LaunchedEffect (uiState) {
+        when (uiState) {
+            is FormState.Success -> {
+                coroutineScope.launch {
+                    snackbarHostState.showSnackbar(
+                        uiState.message,
+                    )
+                }
+                delay(700)
+                onNavigate()
+                viewModel.resetSnackBarMessage()
+            }
+
+            is FormState.Error -> {
+                coroutineScope.launch {
+                    snackbarHostState.showSnackbar(
+                        uiState.message,
+                    )
+                }
+            }
+            else -> Unit
+        }
+    }
+
 }
