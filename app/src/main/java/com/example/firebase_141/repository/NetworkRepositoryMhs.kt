@@ -58,7 +58,9 @@ class NetworkRepositoryMhs (
         }
     }
 
-
+    override suspend fun deleteMhs(mahasiswa: Mahasiswa) {
+        TODO("Not yet implemented")
+    }
 
     override suspend fun updateMhs(mahasiswa: Mahasiswa) {
         try {
