@@ -64,7 +64,8 @@ class NetworkRepositoryMhs (
                 .whereEqualTo("nim", mahasiswa.nim)
                 .get()
                 .await()
-
+        } catch (e: Exception){
+            throw Exception("Gagal menghpus data mahasiswa : ${e.message}")
         }
     }
 
