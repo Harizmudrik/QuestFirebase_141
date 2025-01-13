@@ -81,5 +81,17 @@ fun FormMahasiswa (
             text = errorState.gender ?: "",
             color = Color.Red
         )
+        OutlinedTextField(
+            modifier = Modifier.fillMaxWidth(),
+            value = mahasiswaEvent.alamat,
+            onValueChange = { onValueChange(mahasiswaEvent.copy(alamat = it)) },
+            label = { Text("Alamat") },
+            isError = errorState.alamat != null,
+            placeholder = { Text("Masukkan Alamat") }
+        )
+        Text (
+            text = errorState.alamat ?: "",
+            color = Color.Red
+        )
     }
 }
