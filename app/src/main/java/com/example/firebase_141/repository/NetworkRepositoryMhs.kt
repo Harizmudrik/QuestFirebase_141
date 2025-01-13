@@ -59,7 +59,13 @@ class NetworkRepositoryMhs (
     }
 
     override suspend fun deleteMhs(mahasiswa: Mahasiswa) {
-        TODO("Not yet implemented")
+        try {
+            val querySnapshot = firestore.collection("Mahasiswa")
+                .whereEqualTo("nim", mahasiswa.nim)
+                .get()
+                .await()
+
+        }
     }
 
     override suspend fun updateMhs(mahasiswa: Mahasiswa) {
