@@ -85,3 +85,12 @@ data class FormErrorState (
         return nim == null && nama == null && gender == null && alamat == null && kelas == null && angkatan == null
     }
 }
+
+data class MahasiswaEvent (
+    val nim: String = "",
+    val nama: String = "",
+    val gender: String = "",
+    val alamat: String = "",
+    val kelas: String = "",
+    val angkatan: String = ""
+)
